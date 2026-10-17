@@ -2,7 +2,7 @@
 [![CI](https://github.com/al1abb/invoify/actions/workflows/ci.yml/badge.svg)](https://github.com/al1abb/invoify/actions/workflows/ci.yml)
 # Invoify
 
-Invoify is a free, web-based invoice generator built with Next.js, TypeScript, React and the shadcn/ui library. Fill in a form, pick a template, and get a real PDF. No account, no subscription, and nothing about your customers stored on a server.
+Invoify is a free, web-based invoice generator built with Next.js, TypeScript, React and the shadcn/ui library. Fill in a form, pick a template, and get a real PDF. No account, no subscription, and no database: invoice details go to the server only to make the PDF.
 
 ![Invoify Website image](https://github.com/user-attachments/assets/7b7076db-736e-4a82-b61b-cec3c0ff5695)
 
@@ -32,7 +32,6 @@ Invoify is a free, web-based invoice generator built with Next.js, TypeScript, R
 - **13 invoice templates:** Classic, Modern, Sidebar, Bold Header, Minimal, Letterhead, Compact, Two-Tone, Bordered, Left Rail, Statement, Corner and Column.
 - **Live preview:** edit the form and watch the invoice update as you type.
 - **Real PDFs:** rendered with headless Chromium, not a screenshot of the page.
-- **Email delivery:** send the finished PDF straight to your client.
 - **Save and reload:** keep invoices in your browser and load them back later.
 - **Address book:** save senders and clients once, reuse them on every invoice.
 - **Export:** download the invoice data as JSON, CSV or XML.
@@ -51,7 +50,7 @@ Two things worth being clear about:
 - This protects you against someone **reading the browser profile off disk**: a shared or stolen machine, a filesystem backup, a synced profile, another OS account.
 - It does **not** protect against a script injected into the page, which holds the same key handle the app does. Defending against that would need a passphrase the app never stores.
 
-The only time invoice data leaves your machine is when you generate a PDF or send one by email, and it is not retained afterwards.
+Invoice data leaves your machine only when you generate a PDF or export the invoice data (JSON, CSV or XML). The server builds the file and sends it back. It does not write the data to a database or to logs, but it keeps up to 8 recent PDFs in memory for a few minutes as a speed cache. The [privacy page](app/[locale]/privacy/page.tsx) has the full detail.
 
 ## Languages
 

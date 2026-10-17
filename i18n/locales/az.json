@@ -220,13 +220,13 @@
   },
   "meta": {
     "title": "Pulsuz Qaimə Yaradıcısı | Invoify",
-    "description": "Bir neçə dəqiqəyə peşəkar qaimə hazırlayın. On üç şablon, öz rəngləriniz və loqonuz, endirə və ya e-poçtla göndərə biləcəyiniz PDF. Pulsuzdur, qeydiyyat tələb olunmur.",
+    "description": "Bir neçə dəqiqəyə peşəkar qaimə hazırlayın. On üç şablon, öz rəngləriniz və loqonuz, endirə biləcəyiniz PDF. Pulsuzdur, qeydiyyat tələb olunmur.",
     "ogTitle": "Pulsuz qaimə yaradıcısı",
     "ogDescription": "On üç şablon. Doldurun, PDF-i endirin. Qeydiyyat yoxdur."
   },
   "landing": {
     "h1": "Pulsuz qaimə yaradıcısı",
-    "intro": "Invoify brauzerinizdə peşəkar qaimə hazırlayır və sizə PDF verir. On üç şablondan birini seçin, vurğu rəngini və şrifti təyin edin, loqonuzu və imzanızı əlavə edin, nəticəni endirin və ya e-poçtla göndərin. Heç nə hesaba yüklənmir, çünki hesab anlayışı yoxdur.",
+    "intro": "Invoify brauzerinizdə peşəkar qaimə hazırlayır və sizə PDF verir. On üç şablondan birini seçin, vurğu rəngini və şrifti təyin edin, loqonuzu və imzanızı əlavə edin, nəticəni endirin. Heç nə hesaba yüklənmir, çünki hesab anlayışı yoxdur.",
     "guideH1": "Invoify necə işləyir",
     "guideIntro": "Qaimə yaradıcısının nə etdiyini və ondan necə istifadə olunduğunu addım-addım izah edir: on üç şablon, onlarda dəyişə biləcəyiniz şeylər və boş formadan hazır PDF-ə qədər üç addım.",
     "featuresHeading": "Nə əldə edirsiniz",
@@ -241,7 +241,7 @@
       },
       "3": {
         "title": "Əsl PDF",
-        "body": "Brauzerinizin istifadə etdiyi mühərriklə, şriftlər fayla hopdurulmuş şəkildə hazırlanır — beləliklə fayl onu açan hər kompüterdə eyni görünür. Endirin, çap edin və ya birbaşa müştərinizə e-poçtla göndərin."
+        "body": "Brauzerinizin istifadə etdiyi mühərriklə, şriftlər fayla hopdurulmuş şəkildə hazırlanır — beləliklə fayl onu açan hər kompüterdə eyni görünür. Endirin və ya çap edin."
       }
     },
     "howHeading": "Necə işləyir",
@@ -256,7 +256,7 @@
       },
       "3": {
         "title": "PDF yaradın",
-        "body": "Bir kliklə sənəd hazırlanır. Endirin, çap edin, sonra açmaq üçün yadda saxlayın və ya səhifədən çıxmadan müştərinizə göndərin."
+        "body": "Bir kliklə sənəd hazırlanır. Endirin, çap edin və ya sonra açmaq üçün yadda saxlayın."
       }
     },
     "faqHeading": "Suallar",
@@ -267,7 +267,7 @@
       },
       "2": {
         "q": "Qeydiyyatdan keçmək lazımdırmı?",
-        "a": "Xeyr. Qaiməniz üzərində işlədiyiniz müddətdə öz brauzerinizdə saxlanılır, yadda saxlanılmış qaimələr də brauzerin yaddaşında qalır. Serverdə heç nə saxlanılmır."
+        "a": "Xeyr. Qaiməniz üzərində işlədiyiniz müddətdə öz brauzerinizdə saxlanılır, yadda saxlanılmış qaimələr də brauzerin yaddaşında qalır. Qaimə məlumatları serverə yalnız PDF və ya ixrac faylı hazırlamaq üçün göndərilir və verilənlər bazasında saxlanılmır."
       },
       "3": {
         "q": "Şirkət loqomu əlavə edə bilərəmmi?",

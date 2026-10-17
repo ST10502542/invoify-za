@@ -220,13 +220,13 @@
   },
   "meta": {
     "title": "Free South African Tax Invoice Generator (15% VAT) | LD Industries",
-    "description": "Make a SARS-ready tax invoice in minutes: your VAT number, your client's VAT number, 15% VAT worked out in rand, and a PDF to download. Free, no account needed.",
+    "description": "Make a South African tax invoice that includes the fields SARS lists for a tax invoice: your VAT number, your client's if they have one, and 15% VAT in rand. Free, no account.",
     "ogTitle": "Free South African tax invoice generator",
     "ogDescription": "VAT numbers, 15% VAT in rand, thirteen templates. Fill it in, download the PDF. No account."
   },
   "landing": {
     "h1": "Free South African tax invoice generator",
-    "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\" as SARS requires, with both parties' VAT numbers and the 15% VAT shown in rand. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
+    "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\". It includes the fields SARS lists for a tax invoice, with the 15% VAT shown in rand. Your client's VAT number is optional: add it if they have one. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
     "guideH1": "How the tax invoice generator works",
     "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
     "featuresHeading": "What you get",
@@ -241,7 +241,7 @@
       },
       "3": {
         "title": "A real PDF",
-        "body": "Rendered with the same engine your browser uses, with the fonts embedded, so the file looks the same on every machine that opens it. Download it, print it, or send it straight to your client by email."
+        "body": "Rendered with the same engine your browser uses, with the fonts embedded, so the file looks the same on every machine that opens it. Download it or print it."
       }
     },
     "howHeading": "How it works",
@@ -256,18 +256,18 @@
       },
       "3": {
         "title": "Generate the PDF",
-        "body": "One click produces the document. Download it, print it, save it to reopen later, or email it to your client without leaving the page."
+        "body": "One click produces the document. Download it, print it, or save it in your browser to reopen later."
       }
     },
     "faqHeading": "Questions",
     "faq": {
       "1": {
-        "q": "Is Invoify really free?",
-        "a": "Yes. There is no paid tier, no trial, and no account to create. The invoice generator, all thirteen templates and the PDF export are free to use."
+        "q": "Is this invoice generator really free?",
+        "a": "Yes. LD Industries offers it free, with no paid tier, no trial and no account to create. The invoice generator, all thirteen templates and the PDF export are free to use."
       },
       "2": {
         "q": "Do I need to sign up?",
-        "a": "No. Your invoice is held in your own browser while you work on it, and saved invoices stay in your browser's local storage. Nothing is stored on a server."
+        "a": "No. Your invoice is held in your own browser while you work on it, and saved invoices stay in your browser's local storage. Invoice details go to our server only to make the PDF or an export file, and aren't stored in a database."
       },
       "3": {
         "q": "Can I add my company logo?",
