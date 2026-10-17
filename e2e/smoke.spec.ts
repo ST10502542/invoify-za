@@ -34,6 +34,8 @@ function collectProblems(page: Page, problems: string[]) {
         if (msg.type() !== "error") return;
         const text = msg.text();
         if (text.includes("Failed to load resource")) return;
+        // With X-Content-Type-Options: nosniff the browser also logs the expected 404s it refuses to run.
+        if (EXPECTED_FAILING_REQUESTS.some((re) => re.test(text))) return;
         problems.push(`console: ${text}`);
     });
 
