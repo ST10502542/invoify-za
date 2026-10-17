@@ -39,12 +39,24 @@ const BaseFooter = () => {
                     by Ali Abbasov (MIT).
                 </p>
 
-                <nav>
+                <nav className="flex gap-4">
                     <Link
                         href="/guide"
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
                     >
                         {_t("footer.guide")}
+                    </Link>
+                    <Link
+                        href="/privacy"
+                        className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                    >
+                        Privacy
+                    </Link>
+                    <Link
+                        href="/terms"
+                        className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                    >
+                        Terms
                     </Link>
                 </nav>
             </div>

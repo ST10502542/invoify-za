@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
 import { getMessages } from "@/i18n/messages";
+import { BASE_URL } from "@/lib/variables";
 
 /**
  * Open Graph card, generated rather than committed.
@@ -11,7 +12,7 @@ import { getMessages } from "@/i18n/messages";
  * to the site unfurled as a bare URL — and `lib/seo.ts` pointed its JSON-LD
  * `image` at a hashed build artefact that 404s after any rebuild.
  */
-export const alt = "Invoify — free invoice generator";
+export const alt = "Free South African tax invoice generator by LD Industries";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -58,10 +59,10 @@ export default async function OpengraphImage(props: {
                             fontWeight: 700,
                         }}
                     >
-                        I
+                        LD
                     </div>
                     <div style={{ color: "#8E88F7", fontSize: 34, fontWeight: 700 }}>
-                        Invoify
+                        LD Industries
                     </div>
                 </div>
 
@@ -97,7 +98,7 @@ export default async function OpengraphImage(props: {
                         fontSize: 24,
                     }}
                 >
-                    <span>invoify.vercel.app</span>
+                    <span>{new URL(BASE_URL).host}</span>
                 </div>
             </div>
         ),

@@ -227,7 +227,7 @@
   "landing": {
     "h1": "Free South African tax invoice generator",
     "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\" as SARS requires, with both parties' VAT numbers and the 15% VAT shown in rand. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
-    "guideH1": "How Invoify works",
+    "guideH1": "How the tax invoice generator works",
     "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
     "featuresHeading": "What you get",
     "features": {

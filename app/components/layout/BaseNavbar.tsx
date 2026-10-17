@@ -7,7 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Assets
-import Logo from "@/public/assets/img/invoify-logo.svg";
+import LogoBlack from "@/public/assets/img/ldi-icon-black.svg";
+import LogoWhite from "@/public/assets/img/ldi-icon-white.svg";
 
 // ShadCn
 import {
@@ -46,13 +47,22 @@ const BaseNavbar = () => {
             <nav className="container flex h-16 items-center justify-between gap-4">
                 <Link href="/" className="flex shrink-0 items-center">
                     <Image
-                        src={Logo}
-                        alt="Invoify Logo"
-                        width={887}
-                        height={294}
+                        src={LogoBlack}
+                        alt="LD Industries"
+                        width={399}
+                        height={160}
                         loading="eager"
                         priority
-                        className="h-9 w-auto sm:h-10"
+                        className="h-9 w-auto sm:h-10 dark:hidden"
+                    />
+                    <Image
+                        src={LogoWhite}
+                        alt="LD Industries"
+                        width={399}
+                        height={160}
+                        loading="eager"
+                        priority
+                        className="hidden h-9 w-auto sm:h-10 dark:block"
                     />
                 </Link>
 

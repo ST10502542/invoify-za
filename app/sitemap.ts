@@ -28,9 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     });
 
-    return LOCALES.flatMap(({ code }) => [
-        entry(localePath(code), code === "en" ? 1 : 0.8),
-        // The long-form copy, its own indexable page since round 4.
-        entry(localePath(code), code === "en" ? 0.7 : 0.6, "/guide"),
-    ]);
+    // The legal pages are English only, so they get one entry each.
+    const legal = ["privacy", "terms"].map((slug) => ({
+        url: `${BASE_URL}${localePath("en")}/${slug}`,
+        lastModified,
+        changeFrequency: "yearly" as const,
+        priority: 0.3,
+    }));
+
+    return [
+        ...LOCALES.flatMap(({ code }) => [
+            entry(localePath(code), code === "en" ? 1 : 0.8),
+            // The long-form copy, its own indexable page since round 4.
+            entry(localePath(code), code === "en" ? 0.7 : 0.6, "/guide"),
+        ]),
+        ...legal,
+    ];
 }

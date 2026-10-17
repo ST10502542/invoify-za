@@ -19,7 +19,11 @@ export const ENV = process.env.NODE_ENV;
  * current production host. No trailing slash.
  */
 export const BASE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://invoify.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  // Vercel sets this at build; never fall back to upstream's domain, or our canonicals point at their site.
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000")
 ).replace(/\/$/, "");
 export const AUTHOR_WEBSITE = "https://aliabb.vercel.app";
 export const AUTHOR_GITHUB = "https://github.com/al1abb";
