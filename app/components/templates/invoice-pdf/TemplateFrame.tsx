@@ -32,9 +32,13 @@ export function templateCtx(data: TemplateProps): PartCtx {
      * before it is committed to the form.
      */
     const theme: InvoiceTheme = resolveTheme(data.theme ?? data.details?.theme);
+    const labels = data.labels ?? DEFAULT_INVOICE_LABELS;
     return {
         data,
-        labels: data.labels ?? DEFAULT_INVOICE_LABELS,
+        // SARS requires the words "Tax Invoice" when a VAT vendor issues it (VAT Act s20(4)).
+        labels: data.sender?.vatNumber
+            ? { ...labels, invoiceNumber: "Tax Invoice #", tax: "VAT" }
+            : labels,
         theme,
         scale: densityScale(theme.density),
         // Defaults to English so a template rendered without one (a gallery

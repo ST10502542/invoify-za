@@ -33,7 +33,6 @@ import { nextInvoiceNumber } from "@/lib/invoiceNumber";
 import {
   FORM_DEFAULT_VALUES,
   GENERATE_PDF_API,
-  SEND_PDF_API,
   SHORT_DATE_OPTIONS,
   LOCAL_STORAGE_INVOICE_DRAFT_KEY,
   DRAFT_SAVE_DEBOUNCE_MS,
@@ -70,7 +69,6 @@ const defaultInvoiceContext = {
   previewPdfInTab: () => {},
   saveInvoice: () => {},
   deleteInvoice: (index: number) => {},
-  sendPdfToMail: (email: string): Promise<void> => Promise.resolve(),
   exportInvoiceAs: (exportAs: ExportTypes) => {},
   importInvoice: (file: File) => {},
 };
@@ -97,8 +95,6 @@ export const InvoiceContextProvider = ({
     pdfGenerationSuccess,
     saveInvoiceSuccess,
     modifiedInvoiceSuccess,
-    sendPdfSuccess,
-    sendPdfError,
     pdfGenerationError,
     exportInvoiceError,
     importInvoiceError,
@@ -482,39 +478,6 @@ export const InvoiceContextProvider = ({
   };
 
   /**
-   * Send the invoice PDF to the specified email address.
-   *
-   * @param {string} email - The email address to which the Invoice PDF will be sent.
-   * @returns {Promise<void>} A promise that resolves once the email is successfully sent.
-   */
-  const sendPdfToMail = (email: string) => {
-    const fd = new FormData();
-    fd.append("email", email);
-    fd.append("invoicePdf", invoicePdf, "invoice.pdf");
-    fd.append("invoiceNumber", getValues().details.invoiceNumber);
-
-    return fetch(SEND_PDF_API, {
-      method: "POST",
-      body: fd,
-    })
-      .then((res) => {
-        if (res.ok) {
-          // Successful toast msg
-          sendPdfSuccess();
-        } else {
-          // Error toast msg
-          sendPdfError({ email, sendPdfToMail });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-
-        // Error toast msg
-        sendPdfError({ email, sendPdfToMail });
-      });
-  };
-
-  /**
    * Export an invoice in the specified format using the provided form values.
    *
    * This function initiates the export process with the chosen export format and the form data.
@@ -596,7 +559,6 @@ export const InvoiceContextProvider = ({
         previewPdfInTab,
         saveInvoice,
         deleteInvoice,
-        sendPdfToMail,
         exportInvoiceAs,
         importInvoice,
       }}

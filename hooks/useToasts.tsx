@@ -1,13 +1,7 @@
 // ShadCn
-import { ToastAction } from "@/components/ui/toast";
 import { toast } from "@/components/ui/use-toast";
 
 const useToasts = () => {
-    type SendErrorType = {
-        email: string;
-        sendPdfToMail: (email: string) => void;
-    };
-
     /*
      * One address book per side of the invoice, so the toast has to say which
      * one it means — "Client saved" after saving your own company reads as a
@@ -65,30 +59,6 @@ const useToasts = () => {
         });
     };
 
-    const sendPdfSuccess = () => {
-        toast({
-            variant: "default",
-            title: "Email sent",
-            description: "Your invoice has been sent to the specified email",
-        });
-    };
-
-    const sendPdfError = ({ email, sendPdfToMail }: SendErrorType) => {
-        toast({
-            variant: "destructive",
-            title: "Error",
-            description: "Something went wrong. Try again in a moment",
-            action: (
-                <ToastAction
-                    onClick={() => sendPdfToMail(email)}
-                    altText="Try again"
-                >
-                    Try again
-                </ToastAction>
-            ),
-        });
-    };
-
     /**
      * Surfaced when RHF rejects a submit. Without this the failure was silent
      * apart from a console.log, and on mobile the invalid field is usually on
@@ -134,8 +104,6 @@ const useToasts = () => {
         pdfGenerationSuccess,
         saveInvoiceSuccess,
         modifiedInvoiceSuccess,
-        sendPdfSuccess,
-        sendPdfError,
         pdfGenerationError,
         exportInvoiceError,
         formValidationError,

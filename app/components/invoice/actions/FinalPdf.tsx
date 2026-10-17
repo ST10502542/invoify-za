@@ -4,7 +4,7 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // Components
-import { BaseButton, SendPdfToEmailModal, Subheading } from "@/app/components";
+import { BaseButton, Subheading } from "@/app/components";
 
 // Contexts
 import { useInvoiceContext } from "@/contexts/InvoiceContext";
@@ -16,7 +16,6 @@ import {
     DownloadCloudIcon,
     Eye,
     FileText,
-    Mail,
     MoveLeft,
     Printer,
 } from "lucide-react";
@@ -29,7 +28,6 @@ export default function FinalPdf() {
         downloadPdf,
         printPdf,
         saveInvoice,
-        sendPdfToMail,
     } = useInvoiceContext();
 
     const { _t } = useTranslationContext();
@@ -88,18 +86,6 @@ export default function FinalPdf() {
                     <BookmarkIcon className="h-4 w-4" />
                     {_t("actions.save")}
                 </BaseButton>
-
-                <SendPdfToEmailModal sendPdfToMail={sendPdfToMail}>
-                    <BaseButton
-                        tooltipLabel={_t("actions.sendToMailTooltip")}
-                        size="sm"
-                        variant={"outline"}
-                        className="col-span-2 w-full sm:w-auto"
-                    >
-                        <Mail className="h-4 w-4" />
-                        {_t("actions.sendToMail")}
-                    </BaseButton>
-                </SendPdfToEmailModal>
             </div>
 
             {/*

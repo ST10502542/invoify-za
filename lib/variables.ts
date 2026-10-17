@@ -23,12 +23,13 @@ export const BASE_URL = (
 ).replace(/\/$/, "");
 export const AUTHOR_WEBSITE = "https://aliabb.vercel.app";
 export const AUTHOR_GITHUB = "https://github.com/al1abb";
+// Unset until the LD Industries domain is live; the footer then shows plain text.
+export const STUDIO_URL = process.env.NEXT_PUBLIC_STUDIO_URL;
 
 /**
  * API endpoints
  */
 export const GENERATE_PDF_API = "/api/invoice/generate";
-export const SEND_PDF_API = "/api/invoice/send";
 export const EXPORT_INVOICE_API = "/api/invoice/export";
 export const WARM_BROWSER_API = "/api/invoice/warm";
 
@@ -60,12 +61,6 @@ export const TAILWIND_CDN =
  * Google
  */
 export const GOOGLE_SC_VERIFICATION = process.env.GOOGLE_SC_VERIFICATION;
-
-/**
- * Nodemailer
- */
-export const NODEMAILER_EMAIL = process.env.NODEMAILER_EMAIL;
-export const NODEMAILER_PW = process.env.NODEMAILER_PW;
 
 /**
  * I18N
@@ -194,6 +189,7 @@ export const FORM_DEFAULT_VALUES = {
     country: "",
     email: "",
     phone: "",
+    vatNumber: "",
     customInputs: [],
   },
   receiver: {
@@ -204,6 +200,7 @@ export const FORM_DEFAULT_VALUES = {
     country: "",
     email: "",
     phone: "",
+    vatNumber: "",
     customInputs: [],
   },
   details: {
@@ -220,7 +217,7 @@ export const FORM_DEFAULT_VALUES = {
         total: 0,
       },
     ],
-    currency: "USD",
+    currency: "ZAR",
     language: "English",
     taxDetails: {
       amount: 0,

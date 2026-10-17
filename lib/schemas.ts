@@ -95,6 +95,12 @@ const fieldValidators = {
     }),
 };
 
+// SARS VAT registration numbers are 10 digits starting with 4. Blank means not registered.
+const vatNumber = z
+    .string()
+    .regex(/^(4\d{9})?$/, { message: "SA VAT numbers are 10 digits starting with 4" })
+    .optional();
+
 const CustomInputSchema = z.object({
     key: z.string(),
     value: z.string(),
@@ -108,6 +114,7 @@ const InvoiceSenderSchema = z.object({
     country: fieldValidators.country,
     email: fieldValidators.email,
     phone: fieldValidators.phone,
+    vatNumber,
     customInputs: z.array(CustomInputSchema).optional(),
 });
 
@@ -119,6 +126,7 @@ const InvoiceReceiverSchema = z.object({
     country: fieldValidators.country,
     email: fieldValidators.email,
     phone: fieldValidators.phone,
+    vatNumber,
     customInputs: z.array(CustomInputSchema).optional(),
 });
 

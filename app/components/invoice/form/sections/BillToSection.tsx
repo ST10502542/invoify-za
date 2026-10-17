@@ -91,6 +91,12 @@ const BillToSection = () => {
                     target.value = target.value.replace(/[^\d\+\-\(\)\s]/g, "");
                 }}
             />
+            <FormInput
+                name="receiver.vatNumber"
+                label="VAT number"
+                placeholder="Required on tax invoices over R5,000"
+                inputMode="numeric"
+            />
             {/* //? key = field.id fixes a bug where wrong field gets deleted  */}
             {fields?.map((field, index) => (
                 <FormCustomInput

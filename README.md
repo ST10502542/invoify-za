@@ -74,7 +74,6 @@ Right-to-left layouts are supported for Arabic and Hebrew. Some PDF translations
 
 ### Additional Dependencies
 
-- **Nodemailer:** Node.js module for sending emails.
 - **Lucide Icons:** Collection of customizable SVG icons.
 - **Playwright:** End-to-end tests.
 
@@ -106,22 +105,12 @@ Follow these instructions to get Invoify up and running on your local machine.
    ```bash
    npm install
    ```
-3. Create an `.env.local` file. See [Environment variables](#environment-variables) below. You can skip this if you do not need the "send PDF by email" feature.
-4. Start development server
+3. Start development server
 
    ```bash
    npm run dev
    ```
-5. Open your web browser and access the application at [http://localhost:3000](http://localhost:3000)
-
-### Environment variables
-
-All of these are optional; the app runs without them, minus the features they enable.
-
-| Variable | Required for | Notes |
-| --- | --- | --- |
-| `NODEMAILER_EMAIL` | Sending invoices by email | The Gmail address that sends the mail. |
-| `NODEMAILER_PW` | Sending invoices by email | A [Gmail **App Password**](https://support.google.com/accounts/answer/185833), **not** your account password. Requires 2-Step Verification. |
+4. Open your web browser and access the application at [http://localhost:3000](http://localhost:3000)
 
 ## Development
 

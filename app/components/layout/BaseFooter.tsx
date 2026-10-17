@@ -6,7 +6,7 @@ import { useTranslationContext } from "@/contexts/TranslationContext";
 import { Link } from "@/i18n/navigation";
 
 // Variables
-import { AUTHOR_GITHUB } from "@/lib/variables";
+import { AUTHOR_GITHUB, STUDIO_URL } from "@/lib/variables";
 
 const BaseFooter = () => {
     const { _t } = useTranslationContext();
@@ -16,15 +16,27 @@ const BaseFooter = () => {
         <footer className="border-t border-border">
             <div className="container flex flex-col items-center justify-between gap-2 py-6 pb-28 text-sm text-muted-foreground sm:flex-row xl:pb-6">
                 <p>
-                    {_t("footer.developedBy")}{" "}
+                    A free tool by{" "}
+                    {STUDIO_URL ? (
+                        <a
+                            href={STUDIO_URL}
+                            className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                        >
+                            LD Industries
+                        </a>
+                    ) : (
+                        <span className="font-medium text-foreground">LD Industries</span>
+                    )}
+                    . Based on{" "}
                     <a
-                        href={AUTHOR_GITHUB}
+                        href={`${AUTHOR_GITHUB}/invoify`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
                     >
-                        Ali Abbasov
-                    </a>
+                        Invoify
+                    </a>{" "}
+                    by Ali Abbasov (MIT).
                 </p>
 
                 <nav>

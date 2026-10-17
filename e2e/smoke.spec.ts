@@ -1651,3 +1651,35 @@ const SAMPLE_INVOICE = {
         theme: { accentColor: "#4F46E5", fontId: "outfit", density: "comfortable" },
     },
 };
+
+test("SA VAT draft renders a tax invoice with VAT in rand", async ({ page }) => {
+    // R10,000 items + R500 delivery, 15% VAT on both: VAT R1,575, total R12,075.
+    // Totals are seeded wrong on purpose so the app's own maths must produce them.
+    const invoice = {
+        ...SAMPLE_INVOICE,
+        sender: { ...SAMPLE_INVOICE.sender, vatNumber: "4123456789" },
+        receiver: { ...SAMPLE_INVOICE.receiver, vatNumber: "4987654321" },
+        details: {
+            ...SAMPLE_INVOICE.details,
+            currency: "ZAR",
+            items: [{ name: "Website build", description: "", quantity: 2, unitPrice: 5000, total: 10000 }],
+            taxDetails: { amount: 15, amountType: "percentage", taxID: "" },
+            discountDetails: { amount: 0, amountType: "amount" },
+            shippingDetails: { cost: 500, costType: "amount" },
+            subTotal: 0,
+            totalAmount: 0,
+        },
+    };
+    await page.addInitScript((inv) => {
+        window.localStorage.setItem("invoify:invoiceDraft", JSON.stringify(inv));
+    }, invoice);
+    await page.goto("/en");
+
+    test.skip(page.viewportSize()!.width < 1280, "below xl the preview lives in a sheet");
+    const preview = page.locator(".invoice-live-preview").first();
+    await expect(preview).toContainText("Tax Invoice #");
+    await expect(preview).toContainText("VAT no: 4987654321");
+    await expect(preview).toContainText("VAT (15%)");
+    await expect(preview).toContainText("ZAR 1,575.00");
+    await expect(preview).toContainText("ZAR 12,075.00");
+});

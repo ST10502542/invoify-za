@@ -190,6 +190,12 @@ export function PartyBlock({
                 )}
             </address>
 
+            {party.vatNumber && (
+                <p className={`${scale.body} text-gray-600`}>
+                    <span className="font-medium">VAT no:</span> {party.vatNumber}
+                </p>
+            )}
+
             {party.customInputs?.map((input, i) => (
                 <p key={i} className={`${scale.body} text-gray-600`}>
                     <span className="font-medium">{input.key}:</span>{" "}
@@ -358,14 +364,6 @@ export function TotalsBlock({
                 : `- ${details.discountDetails.amount}%`,
         ]);
     }
-    if (details.taxDetails?.amount) {
-        rows.push([
-            labels.tax,
-            details.taxDetails.amountType === "amount"
-                ? `+ ${money(details.taxDetails.amount, details.currency, locale)}`
-                : `+ ${details.taxDetails.amount}%`,
-        ]);
-    }
     if (details.shippingDetails?.cost) {
         rows.push([
             labels.shipping,
@@ -373,6 +371,19 @@ export function TotalsBlock({
                 ? `+ ${money(details.shippingDetails.cost, details.currency, locale)}`
                 : `+ ${details.shippingDetails.cost}%`,
         ]);
+    }
+    // Tax is applied last (ChargesContext), so a percentage rate can be backed out of the total.
+    // SARS wants the VAT amount in currency, not just the rate.
+    if (details.taxDetails?.amount) {
+        const rate = Number(details.taxDetails.amount);
+        rows.push(
+            details.taxDetails.amountType === "amount"
+                ? [labels.tax, `+ ${money(rate, details.currency, locale)}`]
+                : [
+                      `${labels.tax} (${rate}%)`,
+                      `+ ${money((details.totalAmount * rate) / (100 + rate), details.currency, locale)}`,
+                  ]
+        );
     }
 
     return (

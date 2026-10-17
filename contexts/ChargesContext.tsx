@@ -197,17 +197,8 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
             setValue("details.discountDetails.amount", discountAmount);
         }
 
-        if (!isNaN(taxAmount)) {
-            if (taxType == "amount") {
-                total += taxAmount;
-                taxAmountType = "amount";
-            } else {
-                total += total * (taxAmount / 100);
-                taxAmountType = "percentage";
-            }
-            setValue("details.taxDetails.amount", taxAmount);
-        }
-
+        // Shipping before tax: SA VAT applies to delivery charges too, and the
+        // templates back the VAT amount out of the total, so tax must come last.
         if (!isNaN(shippingCost)) {
             if (shippingType == "amount") {
                 total += shippingCost;
@@ -217,6 +208,17 @@ export const ChargesContextProvider = ({ children }: ChargesContextProps) => {
                 shippingCostType = "percentage";
             }
             setValue("details.shippingDetails.cost", shippingCost);
+        }
+
+        if (!isNaN(taxAmount)) {
+            if (taxType == "amount") {
+                total += taxAmount;
+                taxAmountType = "amount";
+            } else {
+                total += total * (taxAmount / 100);
+                taxAmountType = "percentage";
+            }
+            setValue("details.taxDetails.amount", taxAmount);
         }
 
         setTotalAmount(total);

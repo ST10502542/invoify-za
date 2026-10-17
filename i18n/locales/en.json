@@ -126,14 +126,12 @@
     "download": "Download",
     "print": "Print",
     "save": "Save",
-    "sendToMail": "Send to mail",
     "openPdf": "Open PDF",
     "pdfReady": "Your invoice PDF is ready.",
     "previewInTabTooltip": "Preview invoice in a new tab",
     "downloadTooltip": "Download invoice PDF",
     "printTooltip": "Print invoice",
     "saveTooltip": "Save invoice in website",
-    "sendToMailTooltip": "Send invoice PDF to mail",
     "importJson": "Import JSON",
     "importJsonTooltip": "Import a JSON invoice file",
     "moreActions": "More actions",
@@ -221,14 +219,14 @@
     "changeAppearance": "Change the invoice's appearance"
   },
   "meta": {
-    "title": "Free Invoice Generator | Invoify",
-    "description": "Create a professional invoice in minutes. Thirteen templates, your own colours and logo, and a PDF you can download or email. Free, no account needed.",
-    "ogTitle": "Free invoice generator",
-    "ogDescription": "Thirteen templates. Fill it in, download the PDF. No account."
+    "title": "Free South African Tax Invoice Generator (15% VAT) | LD Industries",
+    "description": "Make a SARS-ready tax invoice in minutes: your VAT number, your client's VAT number, 15% VAT worked out in rand, and a PDF to download. Free, no account needed.",
+    "ogTitle": "Free South African tax invoice generator",
+    "ogDescription": "VAT numbers, 15% VAT in rand, thirteen templates. Fill it in, download the PDF. No account."
   },
   "landing": {
-    "h1": "Free invoice generator",
-    "intro": "Invoify builds a professional invoice in your browser and hands you a PDF. Choose one of thirteen templates, set your accent colour and typeface, add your logo and signature, and download or email the result. Nothing is uploaded to an account, because there are no accounts.",
+    "h1": "Free South African tax invoice generator",
+    "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\" as SARS requires, with both parties' VAT numbers and the 15% VAT shown in rand. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
     "guideH1": "How Invoify works",
     "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
     "featuresHeading": "What you get",
