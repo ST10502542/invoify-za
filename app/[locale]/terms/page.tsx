@@ -13,9 +13,9 @@ export default function TermsPage() {
     return (
         <LegalPage title="Terms of Use">
             <p>
-                This site is owned and operated by [[LEGAL NAME]]
-                (registration number [[REG NO]]), trading as LD Industries
-                (&ldquo;we&rdquo;, &ldquo;us&rdquo;), of [[ADDRESS]]. By using
+                This site is owned and operated by Luke Dorasamy Industries (Pty) Ltd
+                (registration number 2020/669712/07), trading as LD Industries
+                (&ldquo;we&rdquo;, &ldquo;us&rdquo;), of 13 Fourth Avenue, Flamboyant Park, Malvern, Durban, KwaZulu-Natal, 4055, South Africa. By using
                 it you agree to these terms. If you do not agree, please do not
                 use it.
             </p>
@@ -92,7 +92,7 @@ export default function TermsPage() {
             </p>
 
             <h2>Contact</h2>
-            <p>[[CONTACT EMAIL]]</p>
+            <p>lukedorasamyindustries@gmail.com</p>
         </LegalPage>
     );
 }

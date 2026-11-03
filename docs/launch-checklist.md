@@ -3,9 +3,9 @@
 Checked 2026-10-17 against `~/.claude/skills/software-factory/templates/site-launch-checklist.md`. Free public tool: no accounts, database, payments, uploads to storage, email or AI, so those sections are N/A.
 
 ## Owner items before going live
-- [ ] Fill the placeholders on /privacy and /terms: `[[LEGAL NAME]]`, `[[REG NO]]`, `[[ADDRESS]]`, `[[CONTACT EMAIL]]`, `[[INFORMATION OFFICER]]`
-- [ ] Pick the domain (subdomain of the LD Industries site, e.g. `invoice.<domain>`), then set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_STUDIO_URL` in Vercel
-- [ ] Create the Vercel project from `ST10502542/invoify-za` (Hobby is enough) and check aliases after the first deploy
+- [x] Fill the placeholders on /privacy and /terms: `[[LEGAL NAME]]`, `[[REG NO]]`, `[[ADDRESS]]`, `[[CONTACT EMAIL]]`, `[[INFORMATION OFFICER]]`
+- [x] Interim: za-tax-invoice.vercel.app until the owner picks a domain. Pick the domain (subdomain of the LD Industries site, e.g. `invoice.<domain>`), then set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_STUDIO_URL` in Vercel
+- [x] Create the Vercel project from `ST10502542/invoify-za` (Hobby is enough) and check aliases after the first deploy
 - [ ] Optional: link to Stack'n from the footer once it has a public URL
 
 ## Pages and SEO
