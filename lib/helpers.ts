@@ -257,7 +257,7 @@ const formatAzerbaijaniDate = (date: Date): string =>
 
 const formatDate = (
     value: string | Date | undefined | null,
-    locale = "en-US",
+    locale = "en-ZA",
     fallback = "—"
 ): string => {
     if (!value) return fallback;
@@ -277,10 +277,13 @@ const formatDate = (
 
     if (locale.startsWith("az")) return formatAzerbaijaniDate(date);
 
+    // Bare "en" means US month-first to Intl; this is the South African edition.
+    if (locale === "en") locale = "en-ZA";
+
     try {
         return date.toLocaleDateString(locale, DATE_OPTIONS);
     } catch {
-        return date.toLocaleDateString("en-US", DATE_OPTIONS);
+        return date.toLocaleDateString("en-ZA", DATE_OPTIONS);
     }
 };
 

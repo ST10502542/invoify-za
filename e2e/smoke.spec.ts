@@ -1684,4 +1684,26 @@ test("SA VAT draft renders a tax invoice with VAT in rand", async ({ page }) => 
     await expect(preview).toContainText("VAT (15%)");
     await expect(preview).toContainText("ZAR 1,575.00");
     await expect(preview).toContainText("ZAR 12,075.00");
+    await expect(preview).toContainText("15 January 2026");
+});
+
+test("export keeps the date a South African user picked", async ({ page }) => {
+    // Local midnight on 15 January in Johannesburg, as the date picker stores it.
+    const invoice = {
+        ...SAMPLE_INVOICE,
+        details: { ...SAMPLE_INVOICE.details, invoiceDate: "2026-01-14T22:00:00.000Z" },
+    };
+    await page.addInitScript((inv) => {
+        window.localStorage.setItem("invoify:invoiceDraft", JSON.stringify(inv));
+    }, invoice);
+    await page.goto("/en");
+
+    test.skip(page.viewportSize()!.width < 1280, "the overflow menu is desktop only");
+    await page.getByRole("button", { name: "More actions" }).click();
+    await page.getByRole("button", { name: "Export Invoice" }).click();
+    const [request] = await Promise.all([
+        page.waitForRequest(/\/api\/invoice\/export/),
+        page.getByRole("button", { name: /json/i }).click(),
+    ]);
+    expect(request.postDataJSON().details.invoiceDate).toBe("January 15, 2026");
 });
