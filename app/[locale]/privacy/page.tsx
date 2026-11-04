@@ -49,7 +49,7 @@ export default function PrivacyPage() {
                 bank details and line items of you and your customers. We use
                 it only to produce that file. We do not keep it in a database
                 or write it to logs. The server holds up to 8 recent PDFs in
-                memory for a few minutes as a speed cache, then they are gone.
+                memory for up to five minutes as a speed cache, then they are gone.
             </p>
             <p>
                 Please only enter personal information about other people, such

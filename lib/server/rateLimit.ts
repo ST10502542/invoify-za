@@ -41,7 +41,13 @@ export function rateLimit(
             }
         }
 
-        buckets.set(key, { count: 1, resetAt: now + windowMs });
+        const bucket = { count: 1, resetAt: now + windowMs };
+        buckets.set(key, bucket);
+        // The key holds an IP address, and the privacy page says it goes after
+        // the window.
+        setTimeout(() => {
+            if (buckets.get(key) === bucket) buckets.delete(key);
+        }, windowMs).unref();
         return { allowed: true, remaining: limit - 1, retryAfterSeconds: 0 };
     }
 

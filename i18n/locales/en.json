@@ -219,14 +219,14 @@
     "changeAppearance": "Change the invoice's appearance"
   },
   "meta": {
-    "title": "Free South African Tax Invoice Generator (15% VAT) | LD Industries",
-    "description": "Make a South African tax invoice that includes the fields SARS lists for a tax invoice: your VAT number, your client's if they have one, and 15% VAT in rand. Free, no account.",
+    "title": "Free South African Tax Invoice Generator with VAT | LD Industries",
+    "description": "Make a South African tax invoice that includes the fields SARS lists for a tax invoice: your VAT number, your client's if they have one, and the VAT you add, shown in rand. Free, no account.",
     "ogTitle": "Free South African tax invoice generator",
-    "ogDescription": "VAT numbers, 15% VAT in rand, thirteen templates. Fill it in, download the PDF. No account."
+    "ogDescription": "VAT numbers, VAT shown in rand, thirteen templates. Fill it in, download the PDF. No account."
   },
   "landing": {
     "h1": "Free South African tax invoice generator",
-    "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\". It includes the fields SARS lists for a tax invoice, with the 15% VAT shown in rand. Your client's VAT number is optional: add it if they have one. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
+    "intro": "Build a tax invoice in your browser and download it as a PDF. Add your VAT number and the invoice is titled \"Tax Invoice\". It includes the fields SARS lists for a tax invoice. Add VAT at 15% and the invoice shows it in rand. Your client's VAT number is optional in the tool: add it if they have one, because SARS asks for it on tax invoices over R5,000. Choose one of thirteen templates, add your logo and signature. Nothing is uploaded to an account, because there are no accounts.",
     "guideH1": "How the tax invoice generator works",
     "guideIntro": "A walk through what the invoice generator does and how to use it: the thirteen templates, the things you can change about them, and the three steps from an empty form to a finished PDF.",
     "featuresHeading": "What you get",

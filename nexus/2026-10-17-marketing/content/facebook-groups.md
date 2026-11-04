@@ -24,7 +24,7 @@ SARS lists these on its tax invoice page:
 
 SARS asks for more detail on tax invoices over R5,000 (including your client's VAT number if they have one), and a tax invoice is generally due within 21 days of the sale. Check SARS's tax invoice page for the full list.
 
-Disclosure, as I built this: I made a free tax invoice generator because I was tired of Word templates. Add your VAT number and it titles the invoice Tax Invoice, with 15% VAT in rand. Free, no account, no sign-up. If the group allows it, the link is here: {SITE_URL}/?utm_source=facebook&utm_medium=social&utm_campaign=launch-oct26&utm_content=group-smallbiz-1
+Disclosure, as I built this: I made a free tax invoice generator because I was tired of Word templates. Add your VAT number and it titles the invoice Tax Invoice, and shows the VAT you add in rand. Free, no account, no sign-up. If the group allows it, the link is here: {SITE_URL}/?utm_source=facebook&utm_medium=social&utm_campaign=launch-oct26&utm_content=group-smallbiz-1
 
 Happy to answer questions. If this breaks the group rules, tell me and I will take it down.
 

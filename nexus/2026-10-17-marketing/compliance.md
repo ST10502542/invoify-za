@@ -18,7 +18,7 @@ Thresholds (same page): full tax invoice when consideration is more than R5,000;
 | 4 | Serial number and date of issue | Fields exist and are required. User must keep numbers unique and sequential. | schemas.ts:194-195; parts/index.tsx:221-222 |
 | 5 | Description of goods or services (second-hand goods stated) | Description field exists. Second-hand wording: user must type it. | parts/index.tsx:312-316 |
 | 6 | Quantity or volume | Covered. | schemas.ts:136; parts/index.tsx:323 |
-| 7 | Value of supply, tax charged, consideration | Subtotal, VAT amount in rand (backed out of total), and total are shown. Default rate is 15%, but it is editable. | parts/index.tsx:356-384, 417; variables.ts:312 |
+| 7 | Value of supply, tax charged, consideration | Subtotal, VAT amount in rand (backed out of total), and total are shown. The user adds VAT and sets the rate (15% is the SA rate), but it is editable. | parts/index.tsx:356-384, 417; variables.ts:312 |
 
 Gaps worth knowing (none are marketing claims, but do not promise them):
 - No separate abridged invoice mode. A full invoice is acceptable at any amount, so this is fine.

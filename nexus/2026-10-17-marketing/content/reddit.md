@@ -30,7 +30,7 @@ SARS asks for more detail on tax invoices over R5,000 (including your client's V
 
 Two things that trip people up: the serial number has to stay unique and in order, and an invoice with no VAT number on it is just an invoice, not a tax invoice.
 
-Disclosure: I'm from LD Industries and we made a free generator that does the layout for this. You fill in the form, pick a template and download a PDF. Add your VAT number and it is titled "Tax Invoice" with 15% VAT shown in rand. Free, no account, no sign-up. Your saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database. It does not check your serial numbers or your customer's VAT number, so that part is still on you.
+Disclosure: I'm from LD Industries and we made a free generator that does the layout for this. You fill in the form, pick a template and download a PDF. Add your VAT number and it is titled "Tax Invoice", and the VAT you add shows in rand. Free, no account, no sign-up. Your saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database. It does not check your serial numbers or your customer's VAT number, so that part is still on you.
 
 Happy to answer questions about the list above, or take criticism of the tool.
 
@@ -61,7 +61,7 @@ VAT-registered:
 - Keep invoice numbers unique and in sequence.
 - SARS asks for more detail on tax invoices over R5,000 (including your client's VAT number if they have one), and a tax invoice is generally due within 21 days of the sale. Check SARS's tax invoice page for the full list.
 
-For transparency, I work at LD Industries. We made a free tool that lays this out as a PDF: no account, no sign-up. Add your VAT number and the title becomes "Tax Invoice", with 15% VAT in rand. You still need to fill in the details and check them. Saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database.
+For transparency, I work at LD Industries. We made a free tool that lays this out as a PDF: no account, no sign-up. Add your VAT number and the title becomes "Tax Invoice", and the VAT you add shows in rand. You still need to fill in the details and check them. Saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database.
 
 If you use something else and it works for you, I would like to hear what. Corrections to the checklist are welcome too.
 
@@ -90,7 +90,7 @@ What a full tax invoice shows:
 - A description of the goods or services, and the quantity
 - The value, the VAT charged and the total
 
-SARS asks for more detail on tax invoices over R5,000 (including your client's VAT number if they have one), and a tax invoice is generally due within 21 days of the sale. Check SARS's tax invoice page for the full list. The default VAT rate in our tool is 15%.
+SARS asks for more detail on tax invoices over R5,000 (including your client's VAT number if they have one), and a tax invoice is generally due within 21 days of the sale. Check SARS's tax invoice page for the full list. Our tool does not add VAT for you: switch tax on and enter 15%.
 
 Keep one numbering sequence, show VAT in rand and not only as a percentage, and keep a copy of what you sent.
 

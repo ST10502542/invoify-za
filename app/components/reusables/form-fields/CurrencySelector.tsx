@@ -21,14 +21,19 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 
-// Hooks
-import useCurrencies from "@/hooks/useCurrencies";
+// Currencies
+import currenciesDetails from "@/public/assets/data/currencies.json";
 
 // Styles
 import { fieldControl, fieldLabel, fieldRow } from "./fieldStyles";
 
 // Types
-import { CurrencyType, NameType } from "@/types";
+import { NameType } from "@/types";
+
+// Bundled so that visitors' browsers make no third-party request.
+const CURRENCIES = Object.entries(currenciesDetails).map(
+    ([code, { currency }]) => ({ code, name: currency })
+);
 
 type CurrencySelectorProps = {
     name: NameType;
@@ -42,13 +47,6 @@ const CurrencySelector = ({
     placeholder,
 }: CurrencySelectorProps) => {
     const { control } = useFormContext();
-
-    const {
-        currencies,
-        currenciesLoading,
-        currenciesError,
-        retryFetchCurrencies,
-    } = useCurrencies();
 
     return (
         <div>
@@ -85,49 +83,15 @@ const CurrencySelector = ({
                                                 Currencies
                                             </SelectLabel>
 
-                                            {currenciesLoading && (
-                                                <p className="px-2 py-3 text-sm text-muted-foreground">
-                                                    Loading currencies…
-                                                </p>
-                                            )}
-
-                                            {/* Previously a silent empty list */}
-                                            {currenciesError &&
-                                                !currenciesLoading && (
-                                                    <div className="px-2 py-3">
-                                                        <p className="mb-2 text-sm text-muted-foreground">
-                                                            Could not load
-                                                            currencies.
-                                                        </p>
-                                                        <button
-                                                            type="button"
-                                                            onClick={
-                                                                retryFetchCurrencies
-                                                            }
-                                                            className="text-sm font-medium text-primary underline underline-offset-4"
-                                                        >
-                                                            Retry
-                                                        </button>
-                                                    </div>
-                                                )}
-
-                                            {!currenciesLoading &&
-                                                currencies.map(
-                                                    (
-                                                        currency: CurrencyType,
-                                                        idx: number
-                                                    ) => (
-                                                        <SelectItem
-                                                            key={idx}
-                                                            value={
-                                                                currency.code
-                                                            }
-                                                        >
-                                                            {currency.name}{" "}
-                                                            {`(${currency.code})`}
-                                                        </SelectItem>
-                                                    )
-                                                )}
+                                            {CURRENCIES.map((currency) => (
+                                                <SelectItem
+                                                    key={currency.code}
+                                                    value={currency.code}
+                                                >
+                                                    {currency.name}{" "}
+                                                    {`(${currency.code})`}
+                                                </SelectItem>
+                                            ))}
                                         </SelectGroup>
                                     </SelectContent>
                                 </Select>

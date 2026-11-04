@@ -4,7 +4,8 @@ Checked 2026-10-17 against `~/.claude/skills/software-factory/templates/site-lau
 
 ## Owner items before going live
 - [x] Fill the placeholders on /privacy and /terms: `[[LEGAL NAME]]`, `[[REG NO]]`, `[[ADDRESS]]`, `[[CONTACT EMAIL]]`, `[[INFORMATION OFFICER]]`
-- [x] Interim: za-tax-invoice.vercel.app until the owner picks a domain. Pick the domain (subdomain of the LD Industries site, e.g. `invoice.<domain>`), then set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_STUDIO_URL` in Vercel
+- [x] Interim: live at za-tax-invoice.vercel.app
+- [ ] Pick the domain (subdomain of the LD Industries site, e.g. `invoice.<domain>`), then set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_STUDIO_URL` in Vercel
 - [x] Create the Vercel project from `ST10502542/invoify-za` (Hobby is enough) and check aliases after the first deploy
 - [ ] Optional: link to Stack'n from the footer once it has a public URL
 
@@ -13,7 +14,7 @@ Checked 2026-10-17 against `~/.claude/skills/software-factory/templates/site-lau
 - [x] CTA above the fold (the builder is the page)
 - [x] Meta title and description per page (home, guide, privacy, terms)
 - [x] Open Graph image (rebranded, shows our own host)
-- [x] Favicon set (upstream favicon kept; swap for LDI icon later)
+- [x] Favicon set (LDI icon, generated from the brand kit)
 - [x] robots.txt and sitemap.xml (privacy and terms added)
 - [x] Alt text on images
 - [x] Mobile breakpoints (e2e mobile project passes)
@@ -21,7 +22,7 @@ Checked 2026-10-17 against `~/.claude/skills/software-factory/templates/site-lau
 - [x] Loading and form error states (upstream; VAT number validation added)
 - N/A Thank-you page: no form submission, the PDF download is the result
 - [x] Analytics installed (Vercel Web Analytics, cookieless)
-- [ ] Real contact address (owner item above)
+- [x] Real contact address (owner item above)
 
 ## Legal
 - [x] Terms of use page (from legal-templates terms-of-use). N/A for the "I agree" box: no signup
@@ -29,6 +30,7 @@ Checked 2026-10-17 against `~/.claude/skills/software-factory/templates/site-lau
 - N/A Cookie banner: only the strictly necessary NEXT_LOCALE cookie, analytics is cookieless (stated in the privacy policy)
 - N/A Tracking consent: no session replay, no tracking cookies
 - [x] Fonts self-hosted (next/font and embedded PDF fonts, no Google CDN from the visitor)
+- [x] No third-party requests from the visitor's browser (currency list bundled)
 - N/A Age gate, marketing email, subscriptions, DMCA agent: none of these exist
 - [x] No accessibility overlay widget
 

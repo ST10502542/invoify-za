@@ -15,11 +15,23 @@ const MAX_ENTRIES = 8;
 /** Total cache ceiling. A PDF with a large embedded logo is not small. */
 const MAX_BYTES = 16 * 1024 * 1024;
 
-type Entry = { key: string; pdf: Uint8Array };
+/** The privacy page promises this limit, so change them together. */
+const MAX_AGE_MS = 5 * 60 * 1000;
+
+type Entry = { key: string; pdf: Uint8Array; createdAt: number };
 
 // Ordered oldest-first; the array is short enough that shift/splice is fine.
 let entries: Entry[] = [];
 let totalBytes = 0;
+
+function dropExpired(): void {
+    const cutoff = Date.now() - MAX_AGE_MS;
+    entries = entries.filter((entry) => {
+        if (entry.createdAt > cutoff) return true;
+        totalBytes -= entry.pdf.byteLength;
+        return false;
+    });
+}
 
 /**
  * Keys on the validated body rather than the raw request, so two requests that
@@ -35,6 +47,8 @@ export function pdfCacheKey(body: unknown, locale: string): string {
 }
 
 export function getCachedPdf(key: string): Uint8Array | null {
+    dropExpired();
+
     const index = entries.findIndex((entry) => entry.key === key);
     if (index === -1) return null;
 
@@ -54,8 +68,10 @@ export function setCachedPdf(key: string, pdf: Uint8Array): void {
         return false;
     });
 
-    entries.push({ key, pdf });
+    entries.push({ key, pdf, createdAt: Date.now() });
     totalBytes += pdf.byteLength;
+    // Invoice data must not outlive the limit on an instance that goes idle.
+    setTimeout(dropExpired, MAX_AGE_MS + 1000).unref();
 
     while (entries.length > MAX_ENTRIES || totalBytes > MAX_BYTES) {
         const evicted = entries.shift();

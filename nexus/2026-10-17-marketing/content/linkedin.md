@@ -10,7 +10,7 @@ I built a free tax invoice generator for South Africa.
 
 I kept seeing freelancers and small business owners doing invoices in Word or Excel, or paying for an app they use a few times a month. So I made something simpler.
 
-Fill in a form, pick one of 13 templates, download a PDF. Add your VAT number and the invoice is titled Tax Invoice, with 15% VAT shown in rand. Add your client's VAT number too if they are VAT-registered.
+Fill in a form, pick one of 13 templates, download a PDF. Add your VAT number and the invoice is titled Tax Invoice, and the VAT you add shows in rand. Add your client's VAT number too if they are VAT-registered.
 
 Free, no account, no sign-up. Your saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database.
 
@@ -113,7 +113,7 @@ SARS asks for more detail on tax invoices over R5,000 (including your client's V
 I built a free tax invoice generator for South Africans because I was tired of seeing people fight with spreadsheets. It works like this:
 
 - Fill in a form and pick one of 13 templates.
-- Add your VAT number, and the invoice is titled Tax Invoice, with 15% VAT shown in rand.
+- Add your VAT number, and the invoice is titled Tax Invoice, and the VAT you add shows in rand.
 - Add your client's VAT number if they are VAT-registered. It is optional in the tool, so you have to add it yourself.
 - Download a PDF. There is a live preview, and it works on a phone.
 

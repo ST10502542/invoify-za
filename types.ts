@@ -12,10 +12,6 @@ export type InvoiceType = z.infer<typeof InvoiceSchema>;
 export type ItemType = z.infer<typeof ItemSchema>;
 export type FormType = UseFormReturn<InvoiceType>;
 export type NameType = FieldPath<InvoiceType>;
-export type CurrencyType = {
-    [currencyCode: string]: string;
-};
-
 export type CurrencyDetails = {
     currency: string;
     decimals: number;

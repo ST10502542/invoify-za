@@ -6,13 +6,13 @@ Brief: "Free forever, no sign-up" is the offer; "No claim the product can't back
 
 **Line:** A free South African tax invoice generator that runs in your browser, with no account.
 
-**Elevator (25 words):** Fill in a form, pick a template, download a PDF. Add your VAT number for a Tax Invoice with 15% VAT shown. Free, no account.
+**Elevator (25 words):** Fill in a form, pick a template, download a PDF. Add your VAT number for a Tax Invoice, add VAT and it shows in rand. Free, no account.
 
 ## 2. Pillars
 
 | Pillar | Proof | Allowed wording |
 |---|---|---|
-| SA tax invoice | Title becomes "Tax Invoice" when the supplier's VAT number is set (TemplateFrame.tsx); default rate 15%, shown in rand | "Add your VAT number and the invoice is titled Tax Invoice, with 15% VAT in rand." and "Includes the fields SARS lists for a tax invoice." Your client's VAT number is optional: "add your client's VAT number if they are VAT-registered." |
+| SA tax invoice | Title becomes "Tax Invoice" when the supplier's VAT number is set (TemplateFrame.tsx); VAT is added by the user (15% is the SA rate), then shown in rand | "Add your VAT number and the invoice is titled Tax Invoice, with VAT in rand." and "Includes the fields SARS lists for a tax invoice." Your client's VAT number is optional: "add your client's VAT number if they are VAT-registered." |
 | Free, no account | `landing.faq.1` and `.2`: no paid tier, no trial, no account | "Free, no account, no sign-up." |
 | Private by design | README: no accounts, no database; saved invoices and address book in the browser, encrypted at rest; privacy page: PDF is rendered on the server, up to 8 recent PDFs can sit in server memory for a few minutes | "No account. Your saved invoices stay in your browser. Invoice details go to our server only to make the PDF and aren't stored in a database." |
 

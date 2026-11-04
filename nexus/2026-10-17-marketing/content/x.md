@@ -8,7 +8,7 @@ Nothing here has been posted. Post from the founder account. Do not tag SARS. Re
 
 I built a free tax invoice generator for South Africa.
 
-Add your VAT number, get a Tax Invoice PDF with 15% VAT in rand. Free, no account, no sign-up.
+Add your VAT number, get a Tax Invoice PDF with the VAT you add shown in rand. Free, no account, no sign-up.
 
 {SITE_URL}/?utm_source=x&utm_medium=social&utm_campaign=launch-oct26&utm_content=launch-1
 
