@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Wires up the icons that were already sitting in public/assets/favicon but
- * that nothing referenced — `site.webmanifest` shipped in the repo and was
- * never linked.
+ * Wires up the icons in public/assets/favicon.
  */
 export default function manifest(): MetadataRoute.Manifest {
     return {
@@ -14,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
         start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
-        theme_color: "#4F46E5",
+        theme_color: "#000000",
         icons: [
             {
                 src: "/assets/favicon/android-chrome-192x192.png",

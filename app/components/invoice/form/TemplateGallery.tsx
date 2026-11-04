@@ -193,20 +193,12 @@ const AccentControl = ({ theme, setTheme }: ThemeControlProps) => {
                     aria-pressed={theme.accentColor === preset.value}
                     onClick={() => setTheme({ accentColor: preset.value })}
                     className={cn(
-                        /*
-                         * The hairline is not decoration.
-                         *
-                         * The Ink preset is #111827 — rgb(17, 24, 39) — and the
-                         * dark popover it sits on is hsl(235 27% 12%), which is
-                         * rgb(22, 23, 39). A contrast ratio of about 1.02:1: an
-                         * unselected Ink swatch was simply not there in dark
-                         * mode. A ring the opposite way round from the surface
-                         * gives every swatch an edge on either theme.
-                         */
-                        "h-6 w-6 rounded-full border-2 ring-1 ring-inset ring-black/15 transition-transform hover:scale-110 dark:ring-white/25",
+                        // The hairline gives every swatch an edge on either theme;
+                        // the selected ring is offset so it shows on Black too.
+                        "h-6 w-6 rounded-full transition-transform hover:scale-110",
                         theme.accentColor === preset.value
-                            ? "border-foreground"
-                            : "border-transparent"
+                            ? "ring-2 ring-foreground ring-offset-2 ring-offset-popover"
+                            : "ring-1 ring-inset ring-black/15 dark:ring-white/25"
                     )}
                     style={{ backgroundColor: preset.value }}
                 />
