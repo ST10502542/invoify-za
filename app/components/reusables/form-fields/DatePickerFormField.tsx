@@ -5,6 +5,9 @@ import { useState } from "react";
 // RHF
 import { useFormContext } from "react-hook-form";
 
+// i18n
+import { useLocale } from "next-intl";
+
 // ShadCn
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -28,7 +31,7 @@ import { cn } from "@/lib/utils";
 import { fieldControl, fieldLabel, fieldRow } from "./fieldStyles";
 
 // Variables
-import { DATE_OPTIONS } from "@/lib/variables";
+import { formatDate } from "@/lib/helpers";
 
 // Icons
 import { CalendarIcon } from "lucide-react";
@@ -42,6 +45,7 @@ type DatePickerFormFieldProps = {
 };
 
 const DatePickerFormField = ({ name, label }: DatePickerFormFieldProps) => {
+    const locale = useLocale();
     const { control } = useFormContext();
 
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -74,12 +78,7 @@ const DatePickerFormField = ({ name, label }: DatePickerFormFieldProps) => {
                                             >
                                                 <CalendarIcon className="me-2 h-4 w-4" />
                                                 {field.value ? (
-                                                    new Date(
-                                                        field.value
-                                                    ).toLocaleDateString(
-                                                        "en-US",
-                                                        DATE_OPTIONS
-                                                    )
+                                                    formatDate(field.value, locale)
                                                 ) : (
                                                     <span>Pick a date</span>
                                                 )}

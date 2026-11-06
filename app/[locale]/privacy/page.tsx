@@ -10,7 +10,7 @@ export default function PrivacyPage() {
     return (
         <LegalPage title="Privacy Policy">
             <p>
-                [[LEGAL NAME]] (registration number [[REG NO]]), trading as LD
+                Luke Dorasamy Industries (Pty) Ltd (registration number 2020/669712/07), trading as LD
                 Industries (&ldquo;we&rdquo;, &ldquo;us&rdquo;), runs this free
                 South African tax invoice generator. This policy explains what
                 personal information the tool handles. We process it under the
@@ -21,8 +21,8 @@ export default function PrivacyPage() {
             <h2>Who is responsible</h2>
             <p>
                 We are the responsible party under POPIA. Address:
-                [[ADDRESS]]. Email: [[CONTACT EMAIL]]. Information Officer:
-                [[INFORMATION OFFICER]].
+                13 Fourth Avenue, Flamboyant Park, Malvern, Durban, KwaZulu-Natal, 4055, South Africa. Email: lukedorasamyindustries@gmail.com. Information Officer:
+                Luke Dorasamy.
             </p>
 
             <h2>What we do not have</h2>
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
                 bank details and line items of you and your customers. We use
                 it only to produce that file. We do not keep it in a database
                 or write it to logs. The server holds up to 8 recent PDFs in
-                memory for a few minutes as a speed cache, then they are gone.
+                memory for up to five minutes as a speed cache, then they are gone.
             </p>
             <p>
                 Please only enter personal information about other people, such
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
                 You may ask us whether we hold your personal information, to
                 correct or delete it, and to object to its processing. Because
                 we keep no invoice data after a PDF is produced, there is
-                usually nothing to retrieve. Email [[CONTACT EMAIL]] and we
+                usually nothing to retrieve. Email lukedorasamyindustries@gmail.com and we
                 will reply within a reasonable time.
             </p>
             <p>

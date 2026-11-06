@@ -26,13 +26,14 @@ export type InvoiceTheme = {
 };
 
 export const DEFAULT_INVOICE_THEME: InvoiceTheme = {
-    accentColor: "#4F46E5",
+    accentColor: "#000000",
     fontId: "outfit",
     density: "comfortable",
 };
 
 /** Offered in the gallery; a custom hex is also allowed. */
 export const ACCENT_PRESETS = [
+    { name: "Black", value: "#000000" },
     { name: "Indigo", value: "#4F46E5" },
     { name: "Slate", value: "#334155" },
     { name: "Teal", value: "#0F766E" },

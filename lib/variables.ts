@@ -1,5 +1,6 @@
 // Types
 import { SignatureColor, SignatureFont } from "@/types";
+import { DEFAULT_INVOICE_THEME } from "@/app/components/templates/invoice-pdf/invoiceTheme";
 
 /**
  * Environment
@@ -36,12 +37,6 @@ export const STUDIO_URL = process.env.NEXT_PUBLIC_STUDIO_URL;
 export const GENERATE_PDF_API = "/api/invoice/generate";
 export const EXPORT_INVOICE_API = "/api/invoice/export";
 export const WARM_BROWSER_API = "/api/invoice/warm";
-
-/**
- * External API endpoints
- */
-export const CURRENCIES_API =
-  "https://openexchangerates.org/api/currencies.json";
 
 /**
  * Local storage
@@ -245,13 +240,7 @@ export const FORM_DEFAULT_VALUES = {
     paymentTerms: "",
     totalAmountInWords: "",
     pdfTemplate: 1,
-    // `as const` so fontId/density keep their literal types and satisfy the
-    // enums in ThemeSchema rather than widening to string.
-    theme: {
-      accentColor: "#4F46E5",
-      fontId: "outfit",
-      density: "comfortable",
-    } as const,
+    theme: DEFAULT_INVOICE_THEME,
   },
 };
 
@@ -335,12 +324,6 @@ export const FORM_FILL_VALUES = {
     totalAmount: "850",
     totalAmountInWords: "Eight Hundred Fifty",
     pdfTemplate: 1,
-    // `as const` so fontId/density keep their literal types and satisfy the
-    // enums in ThemeSchema rather than widening to string.
-    theme: {
-      accentColor: "#4F46E5",
-      fontId: "outfit",
-      density: "comfortable",
-    } as const,
+    theme: DEFAULT_INVOICE_THEME,
   },
 };

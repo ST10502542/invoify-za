@@ -54,7 +54,7 @@ export async function generateMetadata(props: {
     const title = meta.title ?? "Free South African Tax Invoice Generator | LD Industries";
     const description =
         meta.description ??
-        "Free SARS-ready tax invoice generator with 15% VAT. No account needed.";
+        "Free South African tax invoice generator with VAT shown in rand. Includes the fields SARS lists for a tax invoice. No account needed.";
 
     return {
         // Resolves every relative URL below, including the generated OG image.

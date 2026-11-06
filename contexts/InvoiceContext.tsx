@@ -425,7 +425,7 @@ export const InvoiceContextProvider = ({
           : [];
 
         const updatedDate = new Date().toLocaleDateString(
-          "en-US",
+          "en-ZA",
           SHORT_DATE_OPTIONS
         );
 
@@ -485,10 +485,16 @@ export const InvoiceContextProvider = ({
    * @param {ExportTypes} exportAs - The format in which to export the invoice.
    */
   const exportInvoiceAs = (exportAs: ExportTypes) => {
-    const formValues = getValues();
+    // Format dates here, as the PDF path does: on the UTC server a South African
+    // local midnight would land on the previous day.
+    const parsed = InvoiceSchema.safeParse(getValues());
+    if (!parsed.success) {
+      exportInvoiceError();
+      return;
+    }
 
     // Service to export invoice with given parameters
-    exportInvoice(exportAs, formValues).catch((error) => {
+    exportInvoice(exportAs, parsed.data).catch((error) => {
       console.error("Error exporting invoice:", error);
       exportInvoiceError();
     });
